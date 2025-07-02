@@ -13,11 +13,10 @@ class UsuarioControlador {
             t8: rh,
             t9: prog,
             t10: fich,
-            t11: cen
         } = req.body;
 
         // Validar campos vacíos
-        const errorCampos = UsuarioControlador.verCampos(name, tel, tipdoc, doc, mailsena, mailper, contras, rh, prog, fich, cen);
+        const errorCampos = UsuarioControlador.verCampos(name, tel, tipdoc, doc, mailsena, mailper, contras, rh, prog, fich);
         if (errorCampos) return res.status(400).json({ error: errorCampos });
 
         // Validaciones individuales
@@ -51,8 +50,8 @@ class UsuarioControlador {
         }
     }
 
-    static verCampos(name, tel, tipdoc, doc, mailsena, mailper, contras, rh, prog, fich, cen) {
-        if (!name || !tel || !tipdoc || !doc || !mailsena || !mailper || !contras || !rh || !prog || !fich || !cen) {
+    static verCampos(name, tel, tipdoc, doc, mailsena, mailper, contras, rh, prog, fich) {
+        if (!name || !tel || !tipdoc || !doc || !mailsena || !mailper || !contras || !rh || !prog || !fich) {
             return 'Todos los campos son obligatorios.';
         }
         return null;
