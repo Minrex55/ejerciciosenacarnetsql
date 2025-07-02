@@ -82,16 +82,16 @@ class UsuarioControlador {
             : 'El teléfono debe tener exactamente 10 dígitos.';
     }
 
-    static veremail(correo) {
+    static veremail(mailsena) {
         const er = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return er.test(correo) && correo.length <= 200
+        return er.test(mailsena) && mailsena.length <= 200
             ? null
             : 'Correo SENA inválido. Ejemplo: ejemplo@email.com';
     }
 
-    static vermailper(correo) {
+    static vermailper(mailper) {
         const er = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return er.test(correo) && correo.length <= 200
+        return er.test(mailper) && mailper.length <= 200
             ? null
             : 'Correo personal inválido. Ejemplo: ejemplo@email.com';
     }
